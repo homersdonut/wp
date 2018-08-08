@@ -11,5 +11,3 @@ post_date: 2018-08-03 04:51:14
 [gallery link="file" ids="82,81,80"]
 
 [waving theme="dark" showCat="true" clicking="false" all="true" ]
-
-[parallax ids="82,81,80"]
