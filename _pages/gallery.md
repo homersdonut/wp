@@ -8,7 +8,7 @@ permalink: https://lisamittoo.ca/wp/gallery/
 published: true
 post_date: 2016-10-05 09:12:09
 ---
-[gallery ids="1246,35,34,1179,1247,1248,1249,1250,1362,1361"]
+[gallery ids="1364,1365,1246,35,34,1179,1247,1248,1249,1250"]
 
 &nbsp;
 
