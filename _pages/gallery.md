@@ -4,7 +4,8 @@ post_title: Gallery
 author: FameThemes
 post_excerpt: ""
 layout: page
-permalink: https://lisamittoo.ca/wp/gallery/
+permalink: >
+  https://lisamittoo.ca/wp/featured/gallery/
 published: true
 post_date: 2016-10-05 09:12:09
 ---
