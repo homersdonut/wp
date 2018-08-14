@@ -1,6 +1,6 @@
 ---
 ID: 1449
-post_title: Graphic Design
+post_title: 'Graphic &#038; Website Design'
 author: lisa
 post_excerpt: ""
 layout: page
