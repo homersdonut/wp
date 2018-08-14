@@ -9,158 +9,287 @@ published: true
 post_date: 2018-08-14 20:47:05
 ---
 <!DOCTYPE html><html lang='en' class=''>
-<head><script src='//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script><script src='//static.codepen.io/assets/editor/live/css_live_reload_init-e9c0cc5bb634d3d14b840de051920ac153d7d3d36fb050abad285779d7e5e8bd.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/matchboxhero/pen/JrLJeb?editors=1100" />
-
+<head><script src='//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script><script src='//static.codepen.io/assets/editor/live/css_live_reload_init-e9c0cc5bb634d3d14b840de051920ac153d7d3d36fb050abad285779d7e5e8bd.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/matchboxhero/pen/RLebOY?editors=1100" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
-<style class="cp-pen-styles">@import url("https://fonts.googleapis.com/css?family=Corben:700");
-h1 {
-  font-family: 'Corben', cursive;
-  font-size: 6rem;
-  color: white;
-  letter-spacing: 0.1rem;
-  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.66);
+<style class="cp-pen-styles">@import url("https://fonts.googleapis.com/css?family=Arima+Madurai:300");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.hero {
-  background-image: radial-gradient(50% 176%, #253854 80%, #061922 100%);
-  min-height: 30rem;
+h1 {
+  font-family: 'Arima Madurai', cursive;
+  color: black;
+  font-size: 4rem;
+  letter-spacing: -3px;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6);
+  position: relative;
+  z-index: 3;
+}
+
+.container {
+  z-index: 1;
   position: relative;
   overflow: hidden;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-content: center;
-}
-.hero__content {
-  position: relative;
-  align-self: center;
-  padding: 3rem 0;
+  min-height: 35rem;
+  background-image: linear-gradient(to bottom, rgba(255, 168, 76, 0.6) 0%, rgba(255, 123, 13, 0.6) 100%), url("https://images.unsplash.com/photo-1446824505046-e43605ffb17f");
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-position: center center;
+  padding: 2rem;
 }
 
-.snow {
+.bird {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells.svg);
+  background-size: auto 100%;
+  width: 88px;
+  height: 125px;
+  will-change: background-position;
+  -webkit-animation-name: fly-cycle;
+          animation-name: fly-cycle;
+  -webkit-animation-timing-function: steps(10);
+          animation-timing-function: steps(10);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.bird--one {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+.bird--two {
+  -webkit-animation-duration: 0.9s;
+          animation-duration: 0.9s;
+  -webkit-animation-delay: -0.75s;
+          animation-delay: -0.75s;
+}
+.bird--three {
+  -webkit-animation-duration: 1.25s;
+          animation-duration: 1.25s;
+  -webkit-animation-delay: -0.25s;
+          animation-delay: -0.25s;
+}
+.bird--four {
+  -webkit-animation-duration: 1.1s;
+          animation-duration: 1.1s;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+
+.bird-container {
   position: absolute;
-  min-width: 100vw;
-  min-height: 100vh;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
-.snow .svg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-#snow-top-layer {
+  top: 20%;
+  left: -10%;
+  -webkit-transform: scale(0) translateX(-10vw);
+          transform: scale(0) translateX(-10vw);
   will-change: transform;
-  -webkit-transform: translateY(-768px);
-          transform: translateY(-768px);
-  -webkit-animation: fall 22.5s infinite linear;
-          animation: fall 22.5s infinite linear;
+  -webkit-animation-name: fly-right-one;
+          animation-name: fly-right-one;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.bird-container--one {
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+.bird-container--two {
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.bird-container--three {
+  -webkit-animation-duration: 14.6s;
+          animation-duration: 14.6s;
+  -webkit-animation-delay: 9.5s;
+          animation-delay: 9.5s;
+}
+.bird-container--four {
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+  -webkit-animation-delay: 10.25s;
+          animation-delay: 10.25s;
 }
 
-#snow-bottom-layer {
-  will-change: transform;
-  -webkit-transform: translateY(-768px);
-          transform: translateY(-768px);
-  -webkit-animation: fall 45s infinite linear;
-          animation: fall 45s infinite linear;
-}
-
-@-webkit-keyframes fall {
+@-webkit-keyframes fly-cycle {
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    background-position: -900px 0;
   }
 }
 
-@keyframes fall {
+@keyframes fly-cycle {
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    background-position: -900px 0;
+  }
+}
+@-webkit-keyframes fly-right-one {
+  0% {
+    -webkit-transform: scale(0.3) translateX(-10vw);
+            transform: scale(0.3) translateX(-10vw);
+  }
+  10% {
+    -webkit-transform: translateY(2vh) translateX(10vw) scale(0.4);
+            transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    -webkit-transform: translateY(0vh) translateX(30vw) scale(0.5);
+            transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
+  30% {
+    -webkit-transform: translateY(4vh) translateX(50vw) scale(0.6);
+            transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
+  40% {
+    -webkit-transform: translateY(2vh) translateX(70vw) scale(0.6);
+            transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
+  50% {
+    -webkit-transform: translateY(0vh) translateX(90vw) scale(0.6);
+            transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
+  60% {
+    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
+            transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  100% {
+    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
+            transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+}
+@keyframes fly-right-one {
+  0% {
+    -webkit-transform: scale(0.3) translateX(-10vw);
+            transform: scale(0.3) translateX(-10vw);
+  }
+  10% {
+    -webkit-transform: translateY(2vh) translateX(10vw) scale(0.4);
+            transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    -webkit-transform: translateY(0vh) translateX(30vw) scale(0.5);
+            transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
+  30% {
+    -webkit-transform: translateY(4vh) translateX(50vw) scale(0.6);
+            transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
+  40% {
+    -webkit-transform: translateY(2vh) translateX(70vw) scale(0.6);
+            transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
+  50% {
+    -webkit-transform: translateY(0vh) translateX(90vw) scale(0.6);
+            transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
+  60% {
+    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
+            transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  100% {
+    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
+            transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+}
+@-webkit-keyframes fly-right-two {
+  0% {
+    -webkit-transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+            transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+  }
+  10% {
+    -webkit-transform: translateY(0vh) translateX(10vw) scale(0.4);
+            transform: translateY(0vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    -webkit-transform: translateY(-4vh) translateX(30vw) scale(0.6);
+            transform: translateY(-4vh) translateX(30vw) scale(0.6);
+  }
+  30% {
+    -webkit-transform: translateY(1vh) translateX(50vw) scale(0.45);
+            transform: translateY(1vh) translateX(50vw) scale(0.45);
+  }
+  40% {
+    -webkit-transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+            transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+  }
+  50% {
+    -webkit-transform: translateY(0vh) translateX(90vw) scale(0.45);
+            transform: translateY(0vh) translateX(90vw) scale(0.45);
+  }
+  51% {
+    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
+            transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+  100% {
+    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
+            transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+}
+@keyframes fly-right-two {
+  0% {
+    -webkit-transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+            transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+  }
+  10% {
+    -webkit-transform: translateY(0vh) translateX(10vw) scale(0.4);
+            transform: translateY(0vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    -webkit-transform: translateY(-4vh) translateX(30vw) scale(0.6);
+            transform: translateY(-4vh) translateX(30vw) scale(0.6);
+  }
+  30% {
+    -webkit-transform: translateY(1vh) translateX(50vw) scale(0.45);
+            transform: translateY(1vh) translateX(50vw) scale(0.45);
+  }
+  40% {
+    -webkit-transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+            transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+  }
+  50% {
+    -webkit-transform: translateY(0vh) translateX(90vw) scale(0.45);
+            transform: translateY(0vh) translateX(90vw) scale(0.45);
+  }
+  51% {
+    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
+            transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+  100% {
+    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
+            transform: translateY(0vh) translateX(110vw) scale(0.45);
   }
 }
 </style></head><body>
-<div class="hero">
-
-    <div class="snow">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" preserveAspectRatio="xMidYMax slice">
-		    <g fill="#FFF" fill-opacity=".15" transform="translate(55 42)">
-			   <g id="snow-bottom-layer">
-				  <ellipse cx="6" cy="1009.5" rx="6" ry="5.5"/>
-				  <ellipse cx="138" cy="1110.5" rx="6" ry="5.5"/>
-				  <ellipse cx="398" cy="1055.5" rx="6" ry="5.5"/>
-				  <ellipse cx="719" cy="1284.5" rx="6" ry="5.5"/>
-				  <ellipse cx="760" cy="1155.5" rx="6" ry="5.5"/>
-				  <ellipse cx="635" cy="1459.5" rx="6" ry="5.5"/>
-				  <ellipse cx="478" cy="1335.5" rx="6" ry="5.5"/>
-				  <ellipse cx="322" cy="1414.5" rx="6" ry="5.5"/>
-				  <ellipse cx="247" cy="1234.5" rx="6" ry="5.5"/>
-				  <ellipse cx="154" cy="1425.5" rx="6" ry="5.5"/>
-				  <ellipse cx="731" cy="773.5" rx="6" ry="5.5"/>
-				  <ellipse cx="599" cy="874.5" rx="6" ry="5.5"/>
-				  <ellipse cx="339" cy="819.5" rx="6" ry="5.5"/>
-				  <ellipse cx="239" cy="1004.5" rx="6" ry="5.5"/>
-				  <ellipse cx="113" cy="863.5" rx="6" ry="5.5"/>
-				  <ellipse cx="102" cy="1223.5" rx="6" ry="5.5"/>
-				  <ellipse cx="395" cy="1155.5" rx="6" ry="5.5"/>
-				  <ellipse cx="826" cy="943.5" rx="6" ry="5.5"/>
-				  <ellipse cx="626" cy="1054.5" rx="6" ry="5.5"/>
-				  <ellipse cx="887" cy="1366.5" rx="6" ry="5.5"/>
-				  <ellipse cx="6" cy="241.5" rx="6" ry="5.5"/>
-				  <ellipse cx="138" cy="342.5" rx="6" ry="5.5"/>
-				  <ellipse cx="398" cy="287.5" rx="6" ry="5.5"/>
-				  <ellipse cx="719" cy="516.5" rx="6" ry="5.5"/>
-				  <ellipse cx="760" cy="387.5" rx="6" ry="5.5"/>
-				  <ellipse cx="635" cy="691.5" rx="6" ry="5.5"/>
-				  <ellipse cx="478" cy="567.5" rx="6" ry="5.5"/>
-				  <ellipse cx="322" cy="646.5" rx="6" ry="5.5"/>
-				  <ellipse cx="247" cy="466.5" rx="6" ry="5.5"/>
-				  <ellipse cx="154" cy="657.5" rx="6" ry="5.5"/>
-				  <ellipse cx="731" cy="5.5" rx="6" ry="5.5"/>
-				  <ellipse cx="599" cy="106.5" rx="6" ry="5.5"/>
-				  <ellipse cx="339" cy="51.5" rx="6" ry="5.5"/>
-				  <ellipse cx="239" cy="236.5" rx="6" ry="5.5"/>
-				  <ellipse cx="113" cy="95.5" rx="6" ry="5.5"/>
-				  <ellipse cx="102" cy="455.5" rx="6" ry="5.5"/>
-				  <ellipse cx="395" cy="387.5" rx="6" ry="5.5"/>
-				  <ellipse cx="826" cy="175.5" rx="6" ry="5.5"/>
-				  <ellipse cx="626" cy="286.5" rx="6" ry="5.5"/>
-				  <ellipse cx="887" cy="598.5" rx="6" ry="5.5"/>
-			   </g>
-		    </g>
-		    <g fill="#FFF" fill-opacity=".3" transform="translate(65 63)">
-			   <g id="snow-top-layer">
-				  <circle cx="8" cy="776" r="8"/>
-				  <circle cx="189" cy="925" r="8"/>
-				  <circle cx="548" cy="844" r="8"/>
-				  <circle cx="685" cy="1115" r="8"/>
-				  <circle cx="858" cy="909" r="8"/>
-				  <circle cx="874" cy="1438" r="8" transform="rotate(180 874 1438)"/>
-				  <circle cx="657" cy="1256" r="8" transform="rotate(180 657 1256)"/>
-				  <circle cx="443" cy="1372" r="8" transform="rotate(180 443 1372)"/>
-				  <circle cx="339" cy="1107" r="8" transform="rotate(180 339 1107)"/>
-				  <circle cx="24" cy="1305" r="8" transform="rotate(180 24 1305)"/>
-				  <circle cx="8" cy="8" r="8"/>
-				  <circle cx="189" cy="157" r="8"/>
-				  <circle cx="548" cy="76" r="8"/>
-				  <circle cx="685" cy="347" r="8"/>
-				  <circle cx="858" cy="141" r="8"/>
-				  <circle cx="874" cy="670" r="8" transform="rotate(180 874 670)"/>
-				  <circle cx="657" cy="488" r="8" transform="rotate(180 657 488)"/>
-				  <circle cx="443" cy="604" r="8" transform="rotate(180 443 604)"/>
-				  <circle cx="339" cy="339" r="8" transform="rotate(180 339 339)"/>
-				  <circle cx="24" cy="537" r="8" transform="rotate(180 24 537)"/>
-			   </g>
-		    </g>
-		</svg>
-    </div>
+<div class="container">
 	
-	<div class="hero__content">
-		<h1>SVG Snow</h1>
+	<h1>SVG Animated Birds</h1>
+	
+	<div class="bird-container bird-container--one">
+		<div class="bird bird--one"></div>
 	</div>
-
+	
+	<div class="bird-container bird-container--two">
+		<div class="bird bird--two"></div>
+	</div>
+	
+	<div class="bird-container bird-container--three">
+		<div class="bird bird--three"></div>
+	</div>
+	
+	<div class="bird-container bird-container--four">
+		<div class="bird bird--four"></div>
+	</div>
+	
 </div>
+
 
 </body></html>
