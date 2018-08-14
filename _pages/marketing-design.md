@@ -9,3 +9,9 @@ permalink: >
 published: true
 post_date: 2018-08-14 01:26:13
 ---
+<ul>
+ 	<li>Logo Design</li>
+ 	<li>Marketing Collateral (Flyers, Posters, etc)</li>
+ 	<li>Signs/Visuals</li>
+ 	<li>Communication material (email, etc)</li>
+</ul>
