@@ -8,4 +8,4 @@ permalink: https://lisamittoo.ca/wp/graphic-design/
 published: true
 post_date: 2018-08-14 01:26:36
 ---
-<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+Illustration and design for print, web interface design, authoring (HTML & CSS), user experience design
