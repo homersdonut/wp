@@ -1,6 +1,6 @@
 ---
 ID: 1383
-post_title: Me
+post_title: ""
 author: lisa
 post_excerpt: ""
 layout: page
