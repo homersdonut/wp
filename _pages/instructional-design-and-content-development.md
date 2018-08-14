@@ -11,3 +11,4 @@ permalink: >
 published: true
 post_date: 2018-08-14 01:27:33
 ---
+Infographics, videos, animation (flash, HTML5, CSS), PDFs, forms
