@@ -1,6 +1,6 @@
 ---
 ID: 1446
-post_title: Marketing Design
+post_title: Branding and Marketing Design
 author: lisa
 post_excerpt: ""
 layout: page
