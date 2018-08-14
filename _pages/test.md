@@ -9,287 +9,88 @@ published: true
 post_date: 2018-08-14 20:47:05
 ---
 <!DOCTYPE html><html lang='en' class=''>
-<head><script src='//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script><script src='//static.codepen.io/assets/editor/live/css_live_reload_init-e9c0cc5bb634d3d14b840de051920ac153d7d3d36fb050abad285779d7e5e8bd.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/matchboxhero/pen/RLebOY?editors=1100" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
-<style class="cp-pen-styles">@import url("https://fonts.googleapis.com/css?family=Arima+Madurai:300");
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+<head><script src='//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script><script src='//static.codepen.io/assets/editor/live/css_live_reload_init-e9c0cc5bb634d3d14b840de051920ac153d7d3d36fb050abad285779d7e5e8bd.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/matchboxhero/pen/pWLOQb?editors=1100" />
 
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+<style class="cp-pen-styles">@import url("https://fonts.googleapis.com/css?family=Lobster+Two");
 h1 {
-  font-family: 'Arima Madurai', cursive;
-  color: black;
-  font-size: 4rem;
-  letter-spacing: -3px;
-  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6);
-  position: relative;
-  z-index: 3;
+  font-family: 'Lobster Two', cursive;
+  font-size: 5rem;
+  text-shadow: 0px 1px 0px white;
+  color: #343434;
 }
 
 .container {
-  z-index: 1;
   position: relative;
-  overflow: hidden;
+  z-index: 0;
+  background-color: #ededed;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 35rem;
-  background-image: linear-gradient(to bottom, rgba(255, 168, 76, 0.6) 0%, rgba(255, 123, 13, 0.6) 100%), url("https://images.unsplash.com/photo-1446824505046-e43605ffb17f");
-  background-blend-mode: soft-light;
-  background-size: cover;
-  background-position: center center;
-  padding: 2rem;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-.bird {
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells.svg);
-  background-size: auto 100%;
-  width: 88px;
-  height: 125px;
-  will-change: background-position;
-  -webkit-animation-name: fly-cycle;
-          animation-name: fly-cycle;
-  -webkit-animation-timing-function: steps(10);
-          animation-timing-function: steps(10);
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-.bird--one {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-delay: -0.5s;
-          animation-delay: -0.5s;
-}
-.bird--two {
-  -webkit-animation-duration: 0.9s;
-          animation-duration: 0.9s;
-  -webkit-animation-delay: -0.75s;
-          animation-delay: -0.75s;
-}
-.bird--three {
-  -webkit-animation-duration: 1.25s;
-          animation-duration: 1.25s;
-  -webkit-animation-delay: -0.25s;
-          animation-delay: -0.25s;
-}
-.bird--four {
-  -webkit-animation-duration: 1.1s;
-          animation-duration: 1.1s;
-  -webkit-animation-delay: -0.5s;
-          animation-delay: -0.5s;
-}
-
-.bird-container {
+.pulse {
+  z-index: -1;
   position: absolute;
-  top: 20%;
-  left: -10%;
-  -webkit-transform: scale(0) translateX(-10vw);
-          transform: scale(0) translateX(-10vw);
-  will-change: transform;
-  -webkit-animation-name: fly-right-one;
-          animation-name: fly-right-one;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 30rem;
 }
-.bird-container--one {
-  -webkit-animation-duration: 15s;
-          animation-duration: 15s;
-  -webkit-animation-delay: 0;
-          animation-delay: 0;
+.pulse circle {
+  fill: #ff5154;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-animation: pulse 2s cubic-bezier(0.5, 0.5, 0, 1);
+          animation: pulse 2s cubic-bezier(0.5, 0.5, 0, 1);
 }
-.bird-container--two {
-  -webkit-animation-duration: 16s;
-          animation-duration: 16s;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+.pulse circle:nth-child(2) {
+  fill: #7fc6a4;
+  -webkit-animation: pulse 2s 0.75s cubic-bezier(0.5, 0.5, 0, 1);
+          animation: pulse 2s 0.75s cubic-bezier(0.5, 0.5, 0, 1);
 }
-.bird-container--three {
-  -webkit-animation-duration: 14.6s;
-          animation-duration: 14.6s;
-  -webkit-animation-delay: 9.5s;
-          animation-delay: 9.5s;
-}
-.bird-container--four {
-  -webkit-animation-duration: 16s;
-          animation-duration: 16s;
-  -webkit-animation-delay: 10.25s;
-          animation-delay: 10.25s;
+.pulse circle:nth-child(3) {
+  fill: #e5f77d;
+  -webkit-animation: pulse 2s 1.5s cubic-bezier(0.5, 0.5, 0, 1);
+          animation: pulse 2s 1.5s cubic-bezier(0.5, 0.5, 0, 1);
 }
 
-@-webkit-keyframes fly-cycle {
+@-webkit-keyframes pulse {
+  25% {
+    opacity: 0.4;
+  }
   100% {
-    background-position: -900px 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
-@keyframes fly-cycle {
-  100% {
-    background-position: -900px 0;
-  }
-}
-@-webkit-keyframes fly-right-one {
-  0% {
-    -webkit-transform: scale(0.3) translateX(-10vw);
-            transform: scale(0.3) translateX(-10vw);
-  }
-  10% {
-    -webkit-transform: translateY(2vh) translateX(10vw) scale(0.4);
-            transform: translateY(2vh) translateX(10vw) scale(0.4);
-  }
-  20% {
-    -webkit-transform: translateY(0vh) translateX(30vw) scale(0.5);
-            transform: translateY(0vh) translateX(30vw) scale(0.5);
-  }
-  30% {
-    -webkit-transform: translateY(4vh) translateX(50vw) scale(0.6);
-            transform: translateY(4vh) translateX(50vw) scale(0.6);
-  }
-  40% {
-    -webkit-transform: translateY(2vh) translateX(70vw) scale(0.6);
-            transform: translateY(2vh) translateX(70vw) scale(0.6);
-  }
-  50% {
-    -webkit-transform: translateY(0vh) translateX(90vw) scale(0.6);
-            transform: translateY(0vh) translateX(90vw) scale(0.6);
-  }
-  60% {
-    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
-            transform: translateY(0vh) translateX(110vw) scale(0.6);
+@keyframes pulse {
+  25% {
+    opacity: 0.4;
   }
   100% {
-    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
-            transform: translateY(0vh) translateX(110vw) scale(0.6);
-  }
-}
-@keyframes fly-right-one {
-  0% {
-    -webkit-transform: scale(0.3) translateX(-10vw);
-            transform: scale(0.3) translateX(-10vw);
-  }
-  10% {
-    -webkit-transform: translateY(2vh) translateX(10vw) scale(0.4);
-            transform: translateY(2vh) translateX(10vw) scale(0.4);
-  }
-  20% {
-    -webkit-transform: translateY(0vh) translateX(30vw) scale(0.5);
-            transform: translateY(0vh) translateX(30vw) scale(0.5);
-  }
-  30% {
-    -webkit-transform: translateY(4vh) translateX(50vw) scale(0.6);
-            transform: translateY(4vh) translateX(50vw) scale(0.6);
-  }
-  40% {
-    -webkit-transform: translateY(2vh) translateX(70vw) scale(0.6);
-            transform: translateY(2vh) translateX(70vw) scale(0.6);
-  }
-  50% {
-    -webkit-transform: translateY(0vh) translateX(90vw) scale(0.6);
-            transform: translateY(0vh) translateX(90vw) scale(0.6);
-  }
-  60% {
-    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
-            transform: translateY(0vh) translateX(110vw) scale(0.6);
-  }
-  100% {
-    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
-            transform: translateY(0vh) translateX(110vw) scale(0.6);
-  }
-}
-@-webkit-keyframes fly-right-two {
-  0% {
-    -webkit-transform: translateY(-2vh) translateX(-10vw) scale(0.5);
-            transform: translateY(-2vh) translateX(-10vw) scale(0.5);
-  }
-  10% {
-    -webkit-transform: translateY(0vh) translateX(10vw) scale(0.4);
-            transform: translateY(0vh) translateX(10vw) scale(0.4);
-  }
-  20% {
-    -webkit-transform: translateY(-4vh) translateX(30vw) scale(0.6);
-            transform: translateY(-4vh) translateX(30vw) scale(0.6);
-  }
-  30% {
-    -webkit-transform: translateY(1vh) translateX(50vw) scale(0.45);
-            transform: translateY(1vh) translateX(50vw) scale(0.45);
-  }
-  40% {
-    -webkit-transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
-            transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
-  }
-  50% {
-    -webkit-transform: translateY(0vh) translateX(90vw) scale(0.45);
-            transform: translateY(0vh) translateX(90vw) scale(0.45);
-  }
-  51% {
-    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
-            transform: translateY(0vh) translateX(110vw) scale(0.45);
-  }
-  100% {
-    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
-            transform: translateY(0vh) translateX(110vw) scale(0.45);
-  }
-}
-@keyframes fly-right-two {
-  0% {
-    -webkit-transform: translateY(-2vh) translateX(-10vw) scale(0.5);
-            transform: translateY(-2vh) translateX(-10vw) scale(0.5);
-  }
-  10% {
-    -webkit-transform: translateY(0vh) translateX(10vw) scale(0.4);
-            transform: translateY(0vh) translateX(10vw) scale(0.4);
-  }
-  20% {
-    -webkit-transform: translateY(-4vh) translateX(30vw) scale(0.6);
-            transform: translateY(-4vh) translateX(30vw) scale(0.6);
-  }
-  30% {
-    -webkit-transform: translateY(1vh) translateX(50vw) scale(0.45);
-            transform: translateY(1vh) translateX(50vw) scale(0.45);
-  }
-  40% {
-    -webkit-transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
-            transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
-  }
-  50% {
-    -webkit-transform: translateY(0vh) translateX(90vw) scale(0.45);
-            transform: translateY(0vh) translateX(90vw) scale(0.45);
-  }
-  51% {
-    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
-            transform: translateY(0vh) translateX(110vw) scale(0.45);
-  }
-  100% {
-    -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
-            transform: translateY(0vh) translateX(110vw) scale(0.45);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 </style></head><body>
 <div class="container">
 	
-	<h1>SVG Animated Birds</h1>
+	<h1>Pulse Animation</h1>
 	
-	<div class="bird-container bird-container--one">
-		<div class="bird bird--one"></div>
-	</div>
-	
-	<div class="bird-container bird-container--two">
-		<div class="bird bird--two"></div>
-	</div>
-	
-	<div class="bird-container bird-container--three">
-		<div class="bird bird--three"></div>
-	</div>
-	
-	<div class="bird-container bird-container--four">
-		<div class="bird bird--four"></div>
-	</div>
+	<svg class="pulse" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <circle id="Oval" cx="512" cy="512" r="512"></circle>
+        <circle id="Oval" cx="512" cy="512" r="512"></circle>
+		<circle id="Oval" cx="512" cy="512" r="512"></circle>
+</svg>
 	
 </div>
-
 
 </body></html>
